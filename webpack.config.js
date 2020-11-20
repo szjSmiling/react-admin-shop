@@ -2,7 +2,7 @@
  * @Author: Jelly
  * @Date: 2020-11-15 21:09:44
  * @LastEditors: Jelly
- * @LastEditTime: 2020-11-16 00:13:59
+ * @LastEditTime: 2020-11-21 00:03:39
  * @Github: https://github.com/szjSmiling/react-admin-shop
  */
 
@@ -18,11 +18,21 @@ module.exports = {
     publicPath: '/dist',
     filename: 'js/app.js'
   },
+  resolve: {
+    alias: {
+      page: path.resolve(__dirname, 'src/page'),
+      component: path.resolve(__dirname, 'src/component'),
+    }
+  },
   devServer: {
     // output中配置了publicPath: '/dist',就不需要这个配置了
     // contentBase: './dist',
+    open: true,
     host: 'localhost',
     port: 8086,
+    historyApiFallback: {
+      index: '/dist/index.html'
+    }
   },
   module: {
     rules: [
@@ -85,7 +95,8 @@ module.exports = {
   plugins: [
     // 处理html文件
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      favico: './favicon.ico'
     }),
     // 独立css文件
     new ExtractTextPlugin('css/[name].css'),
@@ -93,6 +104,15 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
       filename: 'js/base.js'
-    })
+    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   output: {
+    //     comments: false
+    //   },
+    //   compress: {
+    //     drop_console: true,
+    //     drop_debugger: true,
+    //   }
+    // })
   ]
 };
