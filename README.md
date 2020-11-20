@@ -77,4 +77,13 @@ use React to finish a shop admin system
 `
 14. 安装 yarn add webpack-dev-server@2.9.7 --dev (本地简化启动,热更新)
 
+15. 安装 yarn add react-router-dom@4.2.2
+`版本特点: 1.动态路由, 纯react组件; 2.遵从react组件的思想`
+`提供的组件:
+<BrowserRouter /> (需要后端设置一些东西), <HashRouter> 路由方式
+<Route exact /> 路由规则(属性: exact 完全匹配), 路径对应组件或者对应某一个渲染方式
+<Switch /> 路由选项(解决路由多次匹配的问题), 被其包裹的路由只有第一个符合的被匹配
+<Link /> (解析后相当于a标签), <NavLink /> 都是跳转导航
+<Redirect /> 自动跳转
+`
 ```
