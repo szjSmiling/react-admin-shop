@@ -1,9 +1,3 @@
-<!--
- * @Author: sunzhongjie
- * @Date: 2020-11-18 23:25:09
- * @LastEditors: Jelly
- * @LastEditTime: 2020-11-18 23:37:29
--->
 ### 1.页面路由
 ```js
 *只能在浏览器看到, 在js无法操作

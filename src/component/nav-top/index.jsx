@@ -2,33 +2,34 @@
  * @Author: sunzhongjie
  * @Date: 2018-02-26 16:55:46
  * @LastEditors: Jelly
- * @LastEditTime: 2020-11-20 23:34:27
+ * @LastEditTime: 2020-11-25 22:12:16
  */
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import MUtil from 'util/mm.jsx'
-// import User from 'service/user-service.jsx'
+import MUtil from 'util/mm.jsx'
+import User from 'service/user-service.jsx'
 
-// const _mm = new MUtil();
-// const _user = new User();
+const _mm = new MUtil();
+const _user = new User();
 
 class NavTop extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: ''
-      // username: _mm.getStorage('userInfo').username || ''
+      username: _mm.getStorage('userInfo').username || ''
     }
   }
   // 退出登录
   onLogout () {
-    // _user.logout().then(res => {
-    //   _mm.removeStorage('userInfo');
-    //   window.location.href = '/login';
-    // }, errMsg => {
-    //   _mm.errorTips(errMsg);
-    // });
+    _user.logout().then(res => {
+      _mm.removeStorage('userInfo');
+      window.location.href = '/login';
+      // 需要从 Route 上继承
+      // this.props.history.push('/login');
+    }, errMsg => {
+      _mm.errorTips(errMsg);
+    });
   }
   render() {
     return (
@@ -36,7 +37,6 @@ class NavTop extends React.Component {
         <div className="navbar-header">
           <Link className="navbar-brand" to="/"><b>HAPPY</b>MMALL</Link>
         </div>
-
         <ul className="nav navbar-top-links navbar-right">
           <li className="dropdown">
             <a className="dropdown-toggle" href="/">

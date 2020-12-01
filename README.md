@@ -86,4 +86,6 @@ use React to finish a shop admin system
 <Link /> (解析后相当于a标签), <NavLink /> 都是跳转导航
 <Redirect /> 自动跳转
 `
+16. 安装富文本插件 yarn add simditor@2.3.1
+`https://github.com/mycolorway/simditor`
 ```

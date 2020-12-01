@@ -2,7 +2,7 @@
  * @Author: Jelly
  * @Date: 2020-11-15 21:09:44
  * @LastEditors: Jelly
- * @LastEditTime: 2020-11-21 00:03:39
+ * @LastEditTime: 2020-11-25 21:59:45
  * @Github: https://github.com/szjSmiling/react-admin-shop
  */
 
@@ -22,6 +22,8 @@ module.exports = {
     alias: {
       page: path.resolve(__dirname, 'src/page'),
       component: path.resolve(__dirname, 'src/component'),
+      util: path.resolve(__dirname, 'src/util'),
+      service: path.resolve(__dirname, 'src/service'),
     }
   },
   devServer: {
@@ -32,6 +34,16 @@ module.exports = {
     port: 8086,
     historyApiFallback: {
       index: '/dist/index.html'
+    },
+    proxy: {
+      '/manage': {
+        target: 'http://admintest.happymmall.com',
+        changeOrigin: true
+      },
+      '/user/logout.do': {
+        target: 'http://admintest.happymmall.com',
+        changeOrigin: true
+      },
     }
   },
   module: {
@@ -105,14 +117,5 @@ module.exports = {
       name: 'common',
       filename: 'js/base.js'
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   output: {
-    //     comments: false
-    //   },
-    //   compress: {
-    //     drop_console: true,
-    //     drop_debugger: true,
-    //   }
-    // })
   ]
 };

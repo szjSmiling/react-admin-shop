@@ -2,7 +2,7 @@
  * @Author: sunzhongjie
  * @Date: 2020-11-18 23:11:10
  * @LastEditors: Jelly
- * @LastEditTime: 2020-11-21 00:00:31
+ * @LastEditTime: 2020-11-21 00:18:05
  */
 
 import React from 'react';
@@ -11,7 +11,7 @@ class PageTitle extends React.Component {
   constructor (props) {
     super(props);
   }
-  componentWillMount () {
+  UNSAFE_componentWillMount () {
     document.title = this.props.title + ' - HAPPY MMALL';
   }
   render () {
