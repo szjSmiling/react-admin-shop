@@ -2,7 +2,7 @@
  * @Author: sunzhongjie
  * @Date: 2020-11-24 22:03:52
  * @LastEditors: Jelly
- * @LastEditTime: 2020-12-01 22:48:32
+ * @LastEditTime: 2020-12-02 00:31:18
  */
 import MUtil from 'util/mm.jsx'
 
@@ -98,6 +98,15 @@ class Product {
       url: '/manage/category/get_category.do',
       data: {
         categoryId: categoryId || 0
+      }
+    })
+  }
+  upDateCategoryName({categoryId, categoryName}) {
+    return _mm.request({
+      url: '/manage/category/set_category_name.do',
+      data: {
+        categoryId,
+        categoryName
       }
     })
   }
