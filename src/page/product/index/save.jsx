@@ -2,7 +2,7 @@
  * @Author: Jelly
  * @Date: 2020-11-15 21:31:52
  * @LastEditors: Jelly
- * @LastEditTime: 2020-12-01 23:26:20
+ * @LastEditTime: 2020-12-01 23:57:44
  * @Github: https://github.com/szjSmiling/react-admin-shop
  */
 import React from 'react';
@@ -133,7 +133,7 @@ class ProductSave extends React.Component {
   render () {
     return (
       <div id="page-wrapper">
-        <PageTitle title="添加商品" />
+        <PageTitle title={this.state.id ? '添加商品' : '编辑商品'} />
         <div className="form-horizontal">
           <div className="form-group">
             <label className="col-sm-2 control-label">商品名称</label>
