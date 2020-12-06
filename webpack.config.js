@@ -2,7 +2,7 @@
  * @Author: Jelly
  * @Date: 2020-11-15 21:09:44
  * @LastEditors: Jelly
- * @LastEditTime: 2020-11-25 21:59:45
+ * @LastEditTime: 2020-12-06 23:31:15
  * @Github: https://github.com/szjSmiling/react-admin-shop
  */
 
@@ -11,11 +11,13 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev'
+console.log(WEBPACK_ENV)
 module.exports = {
   entry: './src/app.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist',
+    publicPath: WEBPACK_ENV === 'dev' ? '/dist' : '//s.jianliwu.com/admin-ve-fe/dist',
     filename: 'js/app.js'
   },
   resolve: {
