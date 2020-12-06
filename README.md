@@ -75,7 +75,7 @@ use React to finish a shop admin system
   ],
 }
 `
-14. 安装 yarn add webpack-dev-server@2.9.7 --dev (本地简化启动,热更新)
+14. 安装 yarn add webpack-dev-server@3.1.11 --dev (本地简化启动,热更新)
 
 15. 安装 yarn add react-router-dom@4.2.2
 `版本特点: 1.动态路由, 纯react组件; 2.遵从react组件的思想`
@@ -86,6 +86,6 @@ use React to finish a shop admin system
 <Link /> (解析后相当于a标签), <NavLink /> 都是跳转导航
 <Redirect /> 自动跳转
 `
-16. 安装富文本插件 yarn add simditor@2.3.1
+16. 安装富文本插件 yarn add simditor@2.3.22
 `https://github.com/mycolorway/simditor`
 ```

@@ -2,7 +2,7 @@
  * @Author: sunzhongjie
  * @Date: 2020-11-24 22:03:52
  * @LastEditors: Jelly
- * @LastEditTime: 2020-12-02 00:31:18
+ * @LastEditTime: 2020-12-06 22:07:07
  */
 import MUtil from 'util/mm.jsx'
 
@@ -92,6 +92,7 @@ class Product {
   /* 
    * 品类相关
   */
+ // 根据父品类id获取品类列表
   getCategoryList(categoryId) {
     return _mm.request({
       type: 'post',
@@ -99,6 +100,14 @@ class Product {
       data: {
         categoryId: categoryId || 0
       }
+    })
+  }
+  // 新增
+  saveCategory(category) {
+    return _mm.request({
+      type: 'post',
+      url: '/manage/category/add_category.do',
+      data: category
     })
   }
   upDateCategoryName({categoryId, categoryName}) {
